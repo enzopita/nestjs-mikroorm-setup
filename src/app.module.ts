@@ -1,3 +1,4 @@
+import { MikroOrmModule } from '@mikro-orm/nestjs';
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 
@@ -6,6 +7,7 @@ import { ConfigModule } from '@nestjs/config';
     ConfigModule.forRoot({
       envFilePath: ['.env.development.local', '.env.development'],
     }),
+    MikroOrmModule.forRoot(),
   ],
 })
 export class AppModule {}
